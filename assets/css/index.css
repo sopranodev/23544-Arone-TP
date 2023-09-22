@@ -1,3 +1,24 @@
 .navbar-brand > img {
     width: 100px;
 }
+
+#navbarCollapse ul li a.colorGreen{
+    color: #009A31;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background-image: linear-gradient(to right,  #0b364e, #0b435f, #0c4666, #0e4f72, #0d677b);
+    
+}
+.footer-container a {
+    color:#fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
