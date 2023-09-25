@@ -173,7 +173,7 @@
     </section>
     <!-- Lugar y fecha -->
     <section id="secLugar">
-      <div class="container-fluid">
+      <div class="container-fluid mx-0 px-0">
         <div class="row g-0">
           <div class="col-md-6">
             <img class="honolulu" src="./assets/imgs/honolulu.jpg" alt="Lugar Honolulu">
@@ -202,19 +202,18 @@
               ignite</abbr>. Cuéntanos de qué quieres hablar!
           </p>
         </div>
-        <div class="container-fluid px-5 my-3">
-          <form class="row g-3" method="post">
+        <div class="form-row px-5 my-4 mx-custom">
+          <form class="row g-3">
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Nombre" aria-label="Ingresar Nombre">
+              <input type="text" class="form-control" id="nombre" placeholder="Nombre">
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control" placeholder="Apellido" aria-label="Ingresar Apellido">
+              <input type="text" class="form-control" id="apellido" placeholder="Apellido">
             </div>
             <div class="col-12">
               <div class="form-group">
-                <textarea type="text" class="form-control" rows="4" aria-describedby="Ingresar texto"
-                  placeholder="Sobre qué quieres hablar?">
-                </textarea>
+                <textarea type="text" id="descripcion" class="form-control" rows="4" aria-describedby="Ingresar texto"
+                  placeholder="Sobre qué quieres hablar?"></textarea>
                 <small class="form-text text-muted">
                   Recuerda incluir un título para tu charla
                 </small>
@@ -228,7 +227,7 @@
 
   </main>
   <footer class="ft-custom-gradient">
-    <div class="container-fluid ms-auto mb-2 mb-lg-0">
+    <div class="container-fluid text-center ms-auto mb-2 mb-lg-0 footer-container">
       <ul class="nav justify-content-center pb-1">
         <li class="nav-item">
           <a href="#" class="nav-link text-white">Preguntas frecuentes</a>
