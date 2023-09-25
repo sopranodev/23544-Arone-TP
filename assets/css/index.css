@@ -1,9 +1,112 @@
-.navbar-brand > img {
+:root {
+    --nv-color-green:#289d43;
+    --car-btn-green: #28a745;
+    --cards-JS: #fec106;
+    --cards-react: #16a2b9;
+    --cards-negocios: #6c757c;
+    --cards-startups: #dd3543;
+    --btn-enviar: #96c93e;
+    --ft-gradient-start: #1c3846;
+    --ft-gradient-end: #1f5271;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    padding-left: 7vw;
+    padding-right: 6vw;
+}
+
+.navbar-brand img {
     width: 100px;
 }
 
 #navbarCollapse ul li a.colorGreen{
-    color: #009A31;
+    color: var(--nv-color-green)
+}
+
+.carousel-inner { 
+    height: 80vh;
+    margin: 0 auto;
+ }
+
+ .carousel-item  { 
+    height: 100%;
+    margin: 0 auto;
+    display: none;
+    transition: none;
+ }
+
+ .carousel-img {
+    object-fit: cover; 
+    filter: brightness(0.5);
+    height: 100%;
+ }
+
+.btn-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-tickets {
+    color: #fff;
+    background-color: var(--car-btn-green);
+}
+
+.oradores {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* padding: 2px; */
+    margin-bottom: 10px;
+}
+
+.botones {
+    font-weight: 800;
+    padding: 0.1vw 0.3vw 0.1vw 0.3vw;
+    border-radius: 0.2rem;
+    font-size: 0.75em;
+}
+
+.btn-JS {
+    background-color: var(--cards-JS);
+    border: none;
+}
+
+.btn-react {
+    color: white;
+    background-color: var(--cards-react);
+    border: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn-negocios {
+    color: white;
+    background-color: var(--cards-negocios);
+    border: none;
+}
+
+.btn-startups {
+    color: white;
+    background-color: var(--cards-startups);
+    border: none;
+}
+
+.honolulu {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-enviar {
+    color: white;
+    background-color: var(--btn-enviar);
 }
 
 .footer-container {
@@ -13,12 +116,9 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem;
-    background-image: linear-gradient(to right,  #0b364e, #0b435f, #0c4666, #0e4f72, #0d677b);
-    
 }
-.footer-container a {
-    color:#fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 300;
+
+.ft-custom-gradient{
+    background: var(--ft-gradient-start);
+    background: linear-gradient(90deg, var(--ft-gradient-start) 35%, var(--ft-gradient-end) 100%);
 }
