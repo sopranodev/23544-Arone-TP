@@ -37,7 +37,8 @@
     height: 100%;
     margin: 0 auto;
     display: none;
-    transition: none;
+    transition: 0s !important;
+    background: transparent;
  }
 
  .carousel-img {
