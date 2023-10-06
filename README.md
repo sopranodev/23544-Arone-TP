@@ -7,4 +7,6 @@
 ---
 El trabajo consiste en replicar la página web utilizando Bootstrap de la imagen que se muestra a continuación.
 <br>
-![final_front_2021](https://github.com/sopranodev/23544-AroneFront/assets/imgs/final_front_2021.jpg)
+![final_front_2021][def]
+
+[def]: https://github.com/sopranodev/23544-AroneFront/assets/imgs/final_front_2021.jpg
