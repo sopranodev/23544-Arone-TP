@@ -7,6 +7,4 @@
 ---
 El trabajo consiste en replicar lo mejor posible la página web utilizando Bootstrap de la imagen que se muestra a continuación. Hacerla responsive.
 <br>
-![final_front_2021][def]
-
-[def]: https://github.com/sopranodev/23544-AroneFront/assets/imgs/final_front_2021.jpg
+<img src="./assets/imgs/final_front_2021.jpg" width="50%" height="50%">
