@@ -5,7 +5,7 @@
 ---
 ### Octubre 2023
 ---
-El trabajo consiste en replicar la página web utilizando Bootstrap de la imagen que se muestra a continuación.
+El trabajo consiste en replicar lo mejor posible la página web utilizando Bootstrap de la imagen que se muestra a continuación. Hacerla responsive.
 <br>
 ![final_front_2021][def]
 
