@@ -1,0 +1,65 @@
+/* Sección Comprar tickets */
+/*Colores tomados de la foto JS Comprar Tickets del trabajo*/
+
+:root {
+--ct-cards-est: #047dfe;
+--ct-cards-trainee: #73c7d4;
+--ct-cards-junior: #ffc10a;
+--ct-total-pagar: #cce5ff;
+--ct-total-pagar-texto: #08468a;
+--ct-btn-verde: #97c93e;
+}
+
+.ComprarTickets {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 10px;
+    width: 100%;
+    
+}
+
+.col-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.125rem;
+}
+
+#bold {
+    font-weight: 600;
+}
+
+.card-est {
+    margin: 0;
+    border: 2px solid var(--ct-cards-est);
+}
+
+.card-trainee {
+    margin: 0;
+    border: 2px solid var(--ct-cards-trainee);
+}
+
+.card-junior {
+    margin: 0;
+    border: 2px solid var(--ct-cards-junior);
+}
+
+.btn-pagar {
+    color: var(--ct-total-pagar-texto);
+    background-color: var(--ct-total-pagar);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.btn-borrar, .btn-resumen {
+    color: white;
+    background-color: var(--ct-btn-verde);
+    padding: 0.2rem;
+    margin-top: 2rem;
+}
