@@ -2,15 +2,17 @@
 /*Colores tomados de la foto JS Comprar Tickets del trabajo*/
 
 :root {
---ct-cards-est: #047dfe;
---ct-cards-est-hover: #0353A8;
---ct-cards-trainee: #73c7d4;
---ct-cards-trainee-hover: #43757C;
---ct-cards-junior: #ffc10a;
---ct-cards-junior-hover: #C59608;
---ct-total-pagar: #cce5ff;
---ct-total-pagar-texto: #08468a;
---ct-btn-verde: #97c93e;
+    --ct-cards-est: #047dfe;
+    --ct-cards-est-hover: #0353A8;
+    --ct-cards-trainee: #73c7d4;
+    --ct-cards-trainee-hover: #43757C;
+    --ct-cards-junior: #ffc10a;
+    --ct-cards-junior-hover: #C59608;
+    --ct-total-pagar: #cce5ff;
+    --ct-total-pagar-texto: #08468a;
+    --ct-btn-verde: #97c93e;
+    --ct-cards-active-sh: #a8a8a8;
+    --ct-cards-active: #ababab;
 }
 
 * {
@@ -97,6 +99,13 @@
     margin: 2rem 0 2rem 0;
 }
 
+.card-active {
+    filter: drop-shadow(0px 5px 3px var(--ct-cards-active-sh));
+    transform: scaleY(105%);
+    background-color: var(--ct-cards-active);
+    
+}
+
 .form-ticket {
     display: flex;
     flex-direction: column;
@@ -112,6 +121,7 @@
     border-radius: 0.5rem;
     font-weight: 500;
 }
+
 #totalPago {
     font-weight: 900;
 }
@@ -120,7 +130,8 @@
     margin-top: 2.5rem;
 }
 
-.btn-borrar, .btn-resumen {
+.btn-borrar,
+.btn-resumen {
     margin-bottom: 1rem;
     color: white;
     background-color: var(--ct-btn-verde);

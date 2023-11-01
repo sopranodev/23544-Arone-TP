@@ -53,7 +53,7 @@
                 <div class="row row-cols-1 row-cols-md-3 mb-3 ticketCategoria">
                     <!-- Card Estudiante -->
                     <div class="estudiante col col-xs-12 col-sm-12 col-md-4 ">
-                        <div class="card  col-card estudiante card-est h-100 mb-2 rounded-1 shadow-lg" id="estudiante">
+                        <div class="card  col-card estudiante card-est h-100 mb-2 rounded-1 shadow-lg" id="cardEstudiante">
                             <div class="card-body">
                                 <h3 class="card-title"><b>Estudiante</b></h3>
                                 <h4 class="card-text">Tienen un descuento</h4>
@@ -64,7 +64,7 @@
                     </div>
                     <!-- Card Trainee -->
                     <div class="col-xs-12 col-sm-12 col-md-4">
-                        <div class="card col-card card-trainee h-100 mb-2 rounded-1 shadow-lg trainee">
+                        <div class="card col-card card-trainee h-100 mb-2 rounded-1 shadow-lg trainee" id="cardTrainee">
                             <div class="card-body">
                                 <h3 class="card-title"><b>Trainee</b></h3>
                                 <h4 class="card-text">Tienen un descuento</h4>
@@ -75,7 +75,7 @@
                     </div>
                     <!-- Card Junior -->
                     <div class="col-xs-12 col-sm-12 col-md-4">
-                        <div class="card col-card card-junior h-100 mb-2 rounded-1 shadow-lg junior">
+                        <div class="card col-card card-junior h-100 mb-2 rounded-1 shadow-lg junior" id="cardJunior">
                             <div class="card-body">
                                 <h3 class="card-title"><b>Junior</b></h3>
                                 <h4 class="card-text">Tienen un descuento</h4>
@@ -96,7 +96,7 @@
 
             <!-- Formulario -->
             <div class="form-row px-3 my-4">
-                <form action="" class="row g-3">
+                <form action="" class="datosForm row g-3" id="comprar_tickets">
                     <div class="col-md-6">
                         <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
                     </div>
@@ -122,7 +122,7 @@
 
 
                     <div class="total-pagar my-5" role="alert">
-                        Total a Pagar: $&nbsp; <span id="totalPago" class="montoAPagar"></span> &nbsp; <span id="totalCantidad"></span>
+                        Total a Pagar: $ <span id="totalPago" class="montoAPagar"></span> &nbsp; <span id="totalCantidad"></span>
                     </div>
 
                     <div class="row">
@@ -133,7 +133,7 @@
 
                         <div class="col-sm-12 col-md-6 col-lg-6">
                             <button id="btnResumen" class="w-100 btn btn-form btn-lg btn-form btn-resumen"
-                                type="button">Resumen</button>
+                                type="submit">Resumen</button>
                         </div>
                     </div>
                 </form>
