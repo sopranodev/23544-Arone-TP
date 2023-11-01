@@ -8,11 +8,12 @@
     --ct-cards-trainee-hover: #43757C;
     --ct-cards-junior: #ffc10a;
     --ct-cards-junior-hover: #C59608;
+    --ct-cards-active-sh: #a8a8a8;
+    --ct-cards-active: #ababab;
     --ct-total-pagar: #cce5ff;
     --ct-total-pagar-texto: #08468a;
     --ct-btn-verde: #97c93e;
-    --ct-cards-active-sh: #a8a8a8;
-    --ct-cards-active: #ababab;
+    --ct-bnt-verde-hover: #759f2d;
 }
 
 * {
@@ -135,8 +136,15 @@
     margin-bottom: 1rem;
     color: white;
     background-color: var(--ct-btn-verde);
-    /* padding: 0.5rem; */
     width: 100%;
     font-weight: 600;
     border: none;
+}
+
+.btn-borrar:hover,
+.btn-resumen:hover {
+    transform: scale(0.9);
+    transition: 0.8s linear;
+    background-color: var(--ct-bnt-verde-hover);
+    opacity: 0.6;
 }

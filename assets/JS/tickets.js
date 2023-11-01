@@ -19,6 +19,7 @@ const totalCantidad = document.getElementById("totalCantidad");
 
 document.getElementById("comprar_tickets").addEventListener("submit", function (event) {
     event.preventDefault();
+    debugger
     const categoria = categoriaSelect.value;
     const cantidad = parseFloat(cantidadInput.value);
     let descuento = 0;
