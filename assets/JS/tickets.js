@@ -54,20 +54,20 @@ function formularioCompleto() {
         alert("Por favor, escriba su nombre");
         nombre.classList.add("is-invalid");
         nombre.focus();
-        return;
+        return false;
     }
     if(apellido.value === ""){
         alert("Por favor, escriba su apellido");
         apellido.classList.add("is-invalid");
         apellido.focus();
-        return;
+        return false;
     }
 
     if(correo.value === ""){
         alert("Por favor, escriba su correo");
         correo.classList.add("is-invalid");
         correo.focus();
-        return;
+        return false;
     }
 
     const correoValido = correo => {
@@ -78,22 +78,23 @@ function formularioCompleto() {
         alert("Por favor, escriba un correo válido!");
         correo.classList.add("is-invalid");
         correo.focus();
-        return;
+        return false;
     }
 
     if((cantidad.value == 0) || (isNaN(cantidad.value))){
         alert("Por favor, ingrese una cantidad válida!");
         cantidad.classList.add("is-invalid");
         cantidad.focus();
-        return;
+        return false;
     }
 
     if(categoria.value == ""){
         alert("Por favor, seleccione una categoría");
         categoria.classList.add("is-invalid");
         categoria.focus();
-        return;
+        return false;
     }
+    return true;
 }
 
 //cambio de selección de cards
@@ -162,7 +163,7 @@ cantidadInput.addEventListener('input', function () {
 });
 
 btnResumen.addEventListener('click', function () {
-    if(formularioCompleto) {
+    if(formularioCompleto()) {
         actualizarTotal();
         const nombre = document.getElementById('nombre').value;
         const cantidad = cantidadInput.value;
@@ -182,4 +183,15 @@ document.getElementById('btnBorrar').addEventListener('click', function () {
     cardTrainee.classList.remove('card-active');
     cardJunior.classList.remove('card-active');
 
+});
+
+window.addEventListener("beforeunload", function (e) {
+    // Restablece los valores de los campos del formulario o simplemente restablece el formulario
+    document.getElementById('comprar_tickets').reset();
+    removeClassError();
+    cardEstudiante.classList.remove('card-active');
+    cardTrainee.classList.remove('card-active');
+    cardJunior.classList.remove('card-active');
+    
+    e.returnValue = '¿Estás seguro de que deseas abandonar la página?'; 
 });
