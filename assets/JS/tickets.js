@@ -19,29 +19,81 @@ const totalCantidad = document.getElementById("totalCantidad");
 
 document.getElementById("comprar_tickets").addEventListener("submit", function (event) {
     event.preventDefault();
-    debugger
-    const categoria = categoriaSelect.value;
-    const cantidad = parseFloat(cantidadInput.value);
-    let descuento = 0;
-
-    if (categoria === 'estudiante') {
-        descuento = 0.8;
-    } else if (categoria === 'trainee') {
-        descuento = 0.5;
-    } else if (categoria === 'junior') {
-        descuento = 0.15;
+    if (formularioCompleto()) {
+        const categoria = categoriaSelect.value;
+        const cantidad = parseFloat(cantidadInput.value);
+        let descuento = 0;
+    
+        if (categoria === 'estudiante') {
+            descuento = 0.8;
+        } else if (categoria === 'trainee') {
+            descuento = 0.5;
+        } else if (categoria === 'junior') {
+            descuento = 0.15;
+        }
+    
+        const total = cantidad * valorTicket * (1 - descuento);
+        const entrada = valorTicket * (1 - descuento);
+        totalPago.textContent = total > 0 ? `${total.toFixed(0)}` : 'Total a pagar: $';
+        totalCantidad.textContent = entrada > 0 ? `(${cantidad.toFixed(0)} ticket/s categoría ${categoria}: $${entrada.toFixed(0)} c/u)` : "";
     }
-
-    const total = cantidad * valorTicket * (1 - descuento);
-    const entrada = valorTicket * (1 - descuento);
-    totalPago.textContent = total > 0 ? `${total.toFixed(0)}` : 'Total a pagar: $';
-    totalCantidad.textContent = entrada > 0 ? `(${cantidad.toFixed(0)} ticket/s categoría ${categoria}: $${entrada.toFixed(0)} c/u)` : "";
 });
 
+//Función para remover los invalid de los inputs
+function removeClassError() {
+    let inputs = document.querySelectorAll(".form-control, .form-select");
+    
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].classList.remove("is-invalid");
+    }
+}
+
 function formularioCompleto() {
-    const nombre = document.getElementById('nombre').value;
-    const cantidad = cantidadInput.value;
-    return nombre !== '' && cantidad !== '';
+    removeClassError();
+    if(nombre.value === ""){
+        alert("Por favor, escriba su nombre");
+        nombre.classList.add("is-invalid");
+        nombre.focus();
+        return;
+    }
+    if(apellido.value === ""){
+        alert("Por favor, escriba su apellido");
+        apellido.classList.add("is-invalid");
+        apellido.focus();
+        return;
+    }
+
+    if(correo.value === ""){
+        alert("Por favor, escriba su correo");
+        correo.classList.add("is-invalid");
+        correo.focus();
+        return;
+    }
+
+    const correoValido = correo => {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(correo);
+    }
+
+    if(!correoValido(correo.value)){
+        alert("Por favor, escriba un correo válido!");
+        correo.classList.add("is-invalid");
+        correo.focus();
+        return;
+    }
+
+    if((cantidad.value == 0) || (isNaN(cantidad.value))){
+        alert("Por favor, ingrese una cantidad válida!");
+        cantidad.classList.add("is-invalid");
+        cantidad.focus();
+        return;
+    }
+
+    if(categoria.value == ""){
+        alert("Por favor, seleccione una categoría");
+        categoria.classList.add("is-invalid");
+        categoria.focus();
+        return;
+    }
 }
 
 //cambio de selección de cards
@@ -57,6 +109,7 @@ function actualizarTotal() {
     const categoria = categoriaSelect.value;
     const cantidad = parseFloat(cantidadInput.value);
     let descuento = 0;
+    formularioCompleto();
 
     if (categoria === 'estudiante') {
         descuento = 0.8;
@@ -71,13 +124,14 @@ function actualizarTotal() {
 
     const total = cantidad * valorTicket * (1 - descuento);
     const entrada = valorTicket * (1 - descuento);
+    
 
     if (isNaN(total) || total <= 0) {
         totalPago.textContent = "";
         totalCantidad.textContent = "";
     } else {
         totalPago.textContent = total > 0 ? `${total.toFixed(0)}` : 'Total a pagar: $';
-        totalCantidad = entrada > 0 ? `(${cantidad.toFixed(0)} ticket/s categoría ${categoria}: $${entrada.toFixed(0)} c/u)` : "";
+        totalCantidad.innerHTML = entrada > 0 ? `(${cantidad.toFixed(0)} ticket/s categoría ${categoria}: $${entrada.toFixed(0)} c/u)` : "";
     }
 }
 
@@ -107,33 +161,22 @@ cantidadInput.addEventListener('input', function () {
     actualizarTotal();
 });
 
-actualizarTotal();
-
 btnResumen.addEventListener('click', function () {
-    if (formularioCompleto()) {
+    if(formularioCompleto) {
+        actualizarTotal();
         const nombre = document.getElementById('nombre').value;
         const cantidad = cantidadInput.value;
         const categoria = categoriaSelect.options[categoriaSelect.selectedIndex].text;
-
-        const mensaje = `Hola ${nombre.toUpperCase()}!\n Vas a comprar '${cantidad}' ticket(s)\n de '${categoria}'\n\n${totalPago.textContent}`;
-
-        const popup = document.createElement('div');
-        popup.classList.add('popup');
-        popup.textContent = mensaje;
-
-        document.body.appendChild(popup);
-
-        setTimeout(function () {
-            popup.remove();
-        }, 5000);
-    } else {
-        alert('Por favor, completa los datos en el formulario.');
+        const mensaje = `Hola ${nombre}!\nUsted va a comprar ${cantidad} ticket(s) de ${categoria} \n\n Total a pagar: $${totalPago.textContent}`;
+        alert(`${mensaje}`);
     }
 });
 
 document.getElementById('btnBorrar').addEventListener('click', function () {
     document.getElementById('comprar_tickets').reset();
+    removeClassError();
     totalPago.textContent = "";
+    totalCantidad.innerHTML = "";
     totalCantidad.textContent = "";
     cardEstudiante.classList.remove('card-active');
     cardTrainee.classList.remove('card-active');

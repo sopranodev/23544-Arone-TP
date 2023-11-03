@@ -141,7 +141,15 @@
     border: none;
 }
 
-.btn-borrar:hover,
+.btn-borrar:hover {
+    transform: scale(0.9);
+    transition: 0.8s linear;
+    color: white;
+    background-color: #922626;
+    opacity: 0.6;
+}
+
+
 .btn-resumen:hover {
     transform: scale(0.9);
     transition: 0.8s linear;
