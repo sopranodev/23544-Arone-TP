@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/imgs/codoacodo.png" type="image/x-icon">
+    <title>Codo a Codo - Trabajo Integrador Front-End - Arone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/tickets.css">
+</head>
+
+<body>
+    <!-- NavBar -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-secondary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/imgs/codoacodo.png" alt="Codo a Codo">Conf Bs As
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-end" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="./index.html#carouselExampleRide">La
+                                Conferencia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html#secOradores">Los oradores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html#secLugar">El lugar y la fecha</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html#secConvOrador">Conviértete en orador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link colorGreen" href="./comprarTickets.html
+                            ">Comprar tickets</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="principal">
+        <section id="secComprarTickets">
+            <div class="comprarTickets container-fluid container-xs container-sm container-md container-lg">
+                <div class="row row-cols-1 row-cols-md-3 mb-3 ticketCategoria">
+                    <!-- Card Estudiante -->
+                    <div class="estudiante col col-xs-12 col-sm-12 col-md-4 ">
+                        <div class="card  col-card estudiante card-est h-100 mb-2 rounded-1 shadow-lg" id="cardEstudiante">
+                            <div class="card-body">
+                                <h3 class="card-title"><b>Estudiante</b></h3>
+                                <h4 class="card-text">Tienen un descuento</h4>
+                                <h4><b>80%</b></h4>
+                                <h5 class="card-text text-center text-muted">* presentar documentación</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Trainee -->
+                    <div class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="card col-card card-trainee h-100 mb-2 rounded-1 shadow-lg trainee" id="cardTrainee">
+                            <div class="card-body">
+                                <h3 class="card-title"><b>Trainee</b></h3>
+                                <h4 class="card-text">Tienen un descuento</h4>
+                                <h4><b>50%</b></h4>
+                                <h5 class="card-text text-center text-muted">* presentar documentación</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Junior -->
+                    <div class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="card col-card card-junior h-100 mb-2 rounded-1 shadow-lg junior" id="cardJunior">
+                            <div class="card-body">
+                                <h3 class="card-title"><b>Junior</b></h3>
+                                <h4 class="card-text">Tienen un descuento</h4>
+                                <h4><b>15%</b></h4>
+                                <h5 class="card-text text-center text-muted">* presentar documentación</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </section>
+        <section class="form-ticket">
+            <div>
+                <p class="text-muted text-uppercase text-center subtittle my-0">venta</p>
+                <h1 class="text-uppercase text-center">valor de ticket $200</h1>
+            </div>
+
+            <!-- Formulario -->
+            <div class="form-row px-3 my-4">
+                <form action="" class="datosForm row g-3" id="comprar_tickets">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+                    </div>
+                    <div class="col-12">
+                        <input type="email" class="form-control" id="correo" placeholder="Correo" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" class="form-control" id="cantidad" placeholder="Ingrese la cantidad de tickets" min="1" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="categoria">Categoría</label>
+                        <select name="categoria" class="form-select categoriaTicket" id="categoria">
+                            <option value="" selected>Seleccione una categoría</option>
+                            <option value="estudiante">Estudiante</option>
+                            <option value="trainee">Trainee</option>
+                            <option value="junior">Junior</option>
+                        </select>
+                    </div>
+
+
+                    <div class="total-pagar my-5" role="alert">
+                        Total a Pagar: $ <span id="totalPago" class="montoAPagar"></span> &nbsp; <span id="totalCantidad"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <button id="btnBorrar" class="w-100 btn btn-form btn-lg btn-form btn-borrar"
+                                type="reset">Borrar</button>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <button id="btnResumen" class="w-100 btn btn-form btn-lg btn-form btn-resumen"
+                                type="submit" >Resumen</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="ft-custom-gradient navbar-expand-md">
+        <div class="container-fluid text-center ms-auto mb-2 mb-lg-0 footer-container">
+            <ul class="navbar-nav justify-content-center mb-lg-0 mx-custom-2 d-flex align-items-center">
+                <li class="nav-item mx-2 px-2">
+                    <a href="#" class="nav-link text-white">Preguntas frecuentes</a>
+                </li>
+                <li class="nav-item mx-2 px-2">
+                    <a href="#" class="nav-link text-white">Contáctanos</a>
+                </li>
+                <li class="nav-item mx-2 px-2">
+                    <a href="#" class="nav-link text-white">Prensa</a>
+                </li>
+                <li class="nav-item mx-2 px-2">
+                    <a href="#" class="nav-link text-white">Conferencias</a>
+                </li>
+                <li class="nav-item mx-2 px-2">
+                    <a href="#" class="nav-link text-white">Términos y condiciones</a>
+                </li>
+                <li class="nav-item mx-2 px-2">
+                    <a href="#" class="nav-link text-white">Privacidad</a>
+                </li>
+                <li class="nav-item mx-2 px-2">
+                    <a href="#" class="nav-link text-white">Estudiantes</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./assets/JS/tickets.js"></script>
+
+</body>
+
+</html>

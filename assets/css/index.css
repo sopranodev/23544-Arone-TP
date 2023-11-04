@@ -1,7 +1,8 @@
 /*Código realizado por CGA*/
 
-/*Colores tomados de la foto final del trabajo*/
+
 :root {
+    /*Colores tomados de la foto front-end del trabajo*/
     --nv-color-green:#289d43;
     --car-btn-green: #28a745;
     --cards-JS: #fec106;
