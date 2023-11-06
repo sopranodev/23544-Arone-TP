@@ -1,3 +1,4 @@
+// Código realizado por CGA 
 // Seteo las variables
 const valorTicket = 200;
 
