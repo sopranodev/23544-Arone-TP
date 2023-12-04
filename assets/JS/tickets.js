@@ -166,9 +166,10 @@ btnResumen.addEventListener('click', function () {
     if(formularioCompleto()) {
         actualizarTotal();
         const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
         const cantidad = cantidadInput.value;
         const categoria = categoriaSelect.options[categoriaSelect.selectedIndex].text;
-        const mensaje = `Hola ${nombre}!\nUsted va a comprar ${cantidad} ticket(s) de ${categoria} \n\n Total a pagar: $${totalPago.textContent}`;
+        const mensaje = `Hola ${nombre} ${apellido}!\nUsted va a comprar ${cantidad} ticket(s) de ${categoria} \n\n Total a pagar: $${totalPago.textContent}`;
         alert(`${mensaje}`);
     }
 });

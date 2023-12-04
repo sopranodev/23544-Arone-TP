@@ -12,6 +12,8 @@
     --btn-enviar: #96c93e;
     --ft-gradient-start: #1c3846;
     --ft-gradient-end: #1f5271;
+    --ct-btn-verde: #97c93e;
+    --ct-bnt-verde-hover: #759f2d;
 }
 
 * {
@@ -116,9 +118,31 @@
     margin-left: 12rem;
 }
 
+
+.btn-borrar,
 .btn-enviar {
+    margin-bottom: 1rem;
     color: white;
     background-color: var(--btn-enviar);
+    width: 100%;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-borrar:hover {
+    transform: scale(0.9);
+    transition: 0.8s linear;
+    color: white;
+    background-color: #922626;
+    opacity: 0.6;
+}
+
+
+.btn-enviar:hover {
+    transform: scale(0.9);
+    transition: 0.8s linear;
+    background-color: var(--ct-bnt-verde-hover);
+    opacity: 0.6;
 }
 
 .footer-container {
