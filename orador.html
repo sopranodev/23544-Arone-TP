@@ -74,10 +74,10 @@
           </div>
           <div class="col-12">
             <div class="col-12 my-2">
-              <input type="text" class="form-control" id="titulo" placeholder="Título" required>
+              <input type="text" class="form-control" id="tema" placeholder="Tema" required>
             </div> 
             <div class="form-group">
-              <textarea type="text" id="descripcion" class="form-control" rows="4" aria-describedby="Ingresar texto"
+              <textarea type="text" id="resumen" class="form-control" rows="4" aria-describedby="Ingresar texto"
                 placeholder="Describe un breve resumen de tu charla" required></textarea>
               <!-- <small class="form-text text-muted">
                 Recuerda cargar tu foto
@@ -97,6 +97,42 @@
         </div>
         </form>
       </div>
+    </div>
+  </section>
+  <section>
+    <!-- Listado de oradores -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-2">
+                <button class="btn btn-enviar" id="btnGetUsers">
+                    Listar Oradores
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-1" id="msj">
+
+            </div>
+            <div class="col-12">
+                <div id="users">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Tema</th>
+                            <th scope="col">Resumen</th>
+                            <th scope="col">&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody id="usersRows">                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
   </section>
     </main>
