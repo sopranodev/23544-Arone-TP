@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--nuevo-->
+    <fieldset>
+        <legend>Nuevo Orador</legend>
+        <input name="nombre" id="nombre" value="carlos">
+        <input name="apellido" id="apellido" value="perez">
+        <input name="email" id="email" value="mail@mail.com">  
+        <input name="tema" id="tema" value="java">
+        <button type="button" id="btnCrear">
+            Enviar
+        </button>
+    </fieldset>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-2">
+                <button class="btn btn-success" id="btnGetUsers">
+                    Listar Oradores
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-1" id="msj">
+
+            </div>
+            <div class="col-12">
+                <div id="users">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Tema</th>
+                            <th scope="col">&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody id="usersRows">                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- nuevo-->
+    <script>
+        crearOperador = () => {
+            const orador = {
+                 nombre:  document.getElementById("nombre").value,
+                 apellido: document.getElementById("apellido").value,
+                 email: document.getElementById("email").value,
+                 tema: document.getElementById("tema").value
+            };
+
+            //debo enviar estos datos al sevidor: https://www.freecodecamp.org/espanol/news/tutorial-de-fetch-api-en-javascript-con-ejemplos-de-js-fetch-post-y-header/
+            fetch(`http://localhost:8080/web-app-23544/api/orador`, {
+                method: "POST",
+                body: JSON.stringify(orador),
+            })
+            .then(response => response.json()) 
+            .then(json => {
+                alert(`alta de orador id:${json.id}] ok`);
+            })
+            .catch(err => console.log(err));
+        }
+
+        document.getElementById("btnCrear").addEventListener('click',crearOperador);
+    </script>
+    
+    <!--listado-->
+    <script>
+        function listarOradores() {/*f2*/
+            //1 preparar
+            const respuesta = fetch(`http://localhost:8080/web-app-23544/api/orador`);
+
+            //2 invocar
+            respuesta
+                .then(response => response.json())
+                .then(data => procesarListado(data))//fulfilled
+                .catch(error => dibujarError(error))//rejected
+        }
+        function procesarListado(data) {
+            const listarOradores = data;
+            let rows = '';
+            for(let orador of listarOradores) {
+                console.log(orador);
+                rows += `
+                <tr>
+                    <th scope="row">${orador.id}</th>
+                    <td>${orador.nombre}</td>
+                    <td>${orador.apellido}</td>
+                    <td>${orador.mail}</td>
+                    <td>${orador.tema}</td>
+                    <td>
+                        <button>Editar</button>
+                        <button onclick="eliminarOrador(${orador.id})">
+                            Eliminar
+                        </button>
+                    </td>
+                </tr>
+                `
+            }
+            document.getElementById('usersRows').innerHTML = rows;
+        }
+
+        function dibujarError(error) {
+            console.log(error);
+            const alerta = `<div class="alert alert-danger" role="alert">
+                ${error.toString()}
+            </div>`;
+            document.getElementById('msj').innerHTML = alerta;
+        }
+
+        document.getElementById('btnGetUsers').addEventListener('click',listarOradores);
+    </script>
+
+    <!--eliminar-->
+    <script>
+        eliminarOrador = (id) => {
+            if(!confirm('SEGURO?')) {
+                return;
+            }
+
+            fetch(`http://localhost:8080/web-app-23544/api/orador?id=${id}`, {
+                method: "DELETE",
+            })
+            .then(response => response) 
+            .then(json => {
+                alert(`se ha eliminado el orador id: ${id}`);
+                listarOradores();
+            })
+            .catch(err => console.log(err));
+        }
+    </script>
+</body>
+</html>

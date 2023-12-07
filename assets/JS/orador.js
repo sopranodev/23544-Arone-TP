@@ -13,21 +13,21 @@ function formularioCompleto() {
         return false;
     }
 
-    if (correo.value === "") {
+    if (mail.value === "") {
         alert("Por favor, escriba su correo");
-        correo.classList.add("is-invalid");
-        correo.focus();
+        mail.classList.add("is-invalid");
+        mail.focus();
         return false;
     }
 
-    const correoValido = correo => {
-        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(correo);
+    const correoValido = mail => {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail);
     }
 
-    if (!correoValido(correo.value)) {
+    if (!correoValido(mail.value)) {
         alert("Por favor, escriba un correo válido!");
-        correo.classList.add("is-invalid");
-        correo.focus();
+        mail.classList.add("is-invalid");
+        mail.focus();
         return false;
     }
     if (tema.value === "") {
@@ -45,29 +45,29 @@ function formularioCompleto() {
 }
 
 
-btn - enviar.addEventListener('click', function () {
-    if (formularioCompleto()) {
-        const nombre = document.getElementById('nombre').value;
-        const apellido = document.getElementById('apellido').value;
-        const email = document.getElementById('email').value;
-        const tema = document.getElementById('tema').value;
-        const resumen = document.getElementById('resumen').value;
-        const mensaje = `Hola ${nombre} ${apellido}!\nUsted enviará los siguientes datos: su Correo es ${email}.\nLa charla que dará se titula ${titulo} \n\n Su resumen es: ${descripcion}`;
-        alert(`${mensaje}`);
-    }
-});
+// btn-enviar.addEventListener('click', function () {
+//     if (formularioCompleto()) {
+//         const nombre = document.getElementById('nombre').value;
+//         const apellido = document.getElementById('apellido').value;
+//         const email = document.getElementById('email').value;
+//         const tema = document.getElementById('tema').value;
+//         const resumen = document.getElementById('resumen').value;
+//         const mensaje = `Hola ${nombre} ${apellido}!\nUsted enviará los siguientes datos: su Correo es ${email}.\nLa charla que dará se titula ${titulo} \n\n Su resumen es: ${descripcion}`;
+//         alert(`${mensaje}`);
+//     }
+// });
 //Crear orador
-crearOperador = () => {
+crearOrador = () => {
     const orador = {
         nombre: document.getElementById("nombre").value,
         apellido: document.getElementById("apellido").value,
-        email: document.getElementById("email").value,
+        mail: document.getElementById("mail").value,
         tema: document.getElementById("tema").value,
         resumen: document.getElementById("resumen").value
     };
 
     //debo enviar estos datos al sevidor
-    fetch(`http://localhost:8080/c23544-Arone-Back/api/orador`, {
+    fetch(`http://localhost:8080/web-app-23544/api/orador`, {
         method: "POST",
         body: JSON.stringify(orador),
     })
@@ -77,7 +77,7 @@ crearOperador = () => {
         })
         .catch(err => console.log(err));
 }
-document.getElementById("btnCrear").addEventListener('click', crearOperador);
+document.getElementById("btnEnviar").addEventListener('click', crearOrador);
 
 //Función para remover los invalid de los inputs
 function removeClassError() {
