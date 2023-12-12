@@ -42,20 +42,9 @@ function formularioCompleto() {
         resumen.focus();
         return false;
     }
+    return true;
 }
 
-
-// btn-enviar.addEventListener('click', function () {
-//     if (formularioCompleto()) {
-//         const nombre = document.getElementById('nombre').value;
-//         const apellido = document.getElementById('apellido').value;
-//         const email = document.getElementById('email').value;
-//         const tema = document.getElementById('tema').value;
-//         const resumen = document.getElementById('resumen').value;
-//         const mensaje = `Hola ${nombre} ${apellido}!\nUsted enviará los siguientes datos: su Correo es ${email}.\nLa charla que dará se titula ${titulo} \n\n Su resumen es: ${descripcion}`;
-//         alert(`${mensaje}`);
-//     }
-// });
 //Crear orador
 crearOrador = () => {
     const orador = {
@@ -65,8 +54,8 @@ crearOrador = () => {
         tema: document.getElementById("tema").value,
         resumen: document.getElementById("resumen").value
     };
-
-    //debo enviar estos datos al sevidor
+    if (formularioCompleto()) {
+         //debo enviar estos datos al sevidor
     fetch(`http://localhost:8080/web-app-23544/api/orador`, {
         method: "POST",
         body: JSON.stringify(orador),
@@ -76,17 +65,40 @@ crearOrador = () => {
             alert(`alta de orador id:${json.id} ok`);
         })
         .catch(err => console.log(err));
+    }
+
+   
 }
 document.getElementById("btnEnviar").addEventListener('click', crearOrador);
 
 //Función para remover los invalid de los inputs
 function removeClassError() {
-    let inputs = document.querySelectorAll(".form-control, .form-select");
+    let inputs = document.querySelectorAll(".form-control");
 
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].classList.remove("is-invalid");
     }
 }
+
+
+document.getElementById('btnBorrar').addEventListener('click', function () {
+    nombre.value = "";
+    apellido.value = "";
+    mail.value = "";
+    tema.value = "";
+    resumen.value = "";
+});
+
+window.addEventListener("beforeunload", function (e) {
+    // Restablece los valores de los campos del formulario o simplemente restablece el formulario
+    nombre.value = "";
+    apellido.value = "";
+    mail.value = "";
+    tema.value = "";
+    resumen.value = "";
+    removeClassError();    
+    e.returnValue = '¿Estás seguro de que deseas abandonar la página?'; 
+});
 
 //Listado
 function listarOradores() {/*f2*/
