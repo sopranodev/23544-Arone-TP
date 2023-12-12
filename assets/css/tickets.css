@@ -13,7 +13,8 @@
     --ct-total-pagar: #cce5ff;
     --ct-total-pagar-texto: #08468a;
     --ct-btn-verde: #97c93e;
-    --ct-bnt-verde-hover: #759f2d;
+    --ct-btn-verde-hover: #759f2d;
+    --ct-btn-borrar-hover:  #922626;
 }
 
 * {
@@ -103,8 +104,7 @@
 .card-active {
     filter: drop-shadow(0px 5px 3px var(--ct-cards-active-sh));
     transform: scaleY(105%);
-    background-color: var(--ct-cards-active);
-    
+    background-color: var(--ct-cards-active);   
 }
 
 .form-ticket {
@@ -145,14 +145,13 @@
     transform: scale(0.9);
     transition: 0.8s linear;
     color: white;
-    background-color: #922626;
+    background-color: var(--ct-btn-borrar-hover);
     opacity: 0.6;
 }
-
 
 .btn-resumen:hover {
     transform: scale(0.9);
     transition: 0.8s linear;
-    background-color: var(--ct-bnt-verde-hover);
+    background-color: var(--ct-btn-verde-hover);
     opacity: 0.6;
 }

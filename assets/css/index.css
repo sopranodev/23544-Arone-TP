@@ -13,7 +13,8 @@
     --ft-gradient-start: #1c3846;
     --ft-gradient-end: #1f5271;
     --ct-btn-verde: #97c93e;
-    --ct-bnt-verde-hover: #759f2d;
+    --ct-btn-verde-hover: #759f2d;
+    --ct-btn-borrar-hover: #922626;
 }
 
 * {
@@ -133,7 +134,7 @@
     transform: scale(0.9);
     transition: 0.8s linear;
     color: white;
-    background-color: #922626;
+    background-color: var(--ct-btn-borrar-hover);
     opacity: 0.6;
 }
 
@@ -141,7 +142,7 @@
 .btn-enviar:hover {
     transform: scale(0.9);
     transition: 0.8s linear;
-    background-color: var(--ct-bnt-verde-hover);
+    background-color: var(--ct-btn-verde-hover);
     opacity: 0.6;
 }
 
