@@ -80,22 +80,20 @@ function removeClassError() {
     }
 }
 
-
-document.getElementById('btnBorrar').addEventListener('click', function () {
+limpiarDatos = () => {
     nombre.value = "";
     apellido.value = "";
     mail.value = "";
     tema.value = "";
     resumen.value = "";
-});
+}
+
+
+document.getElementById('btnBorrar').addEventListener('click', limpiarDatos);
 
 window.addEventListener("beforeunload", function (e) {
     // Restablece los valores de los campos del formulario o simplemente restablece el formulario
-    nombre.value = "";
-    apellido.value = "";
-    mail.value = "";
-    tema.value = "";
-    resumen.value = "";
+    limpiarDatos();
     removeClassError();    
     e.returnValue = '¿Estás seguro de que deseas abandonar la página?'; 
 });

@@ -138,32 +138,32 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Orador</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="col-md-12 my-2">
-                                <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                                <input type="text" class="form-control" id="nombreActualizar" placeholder="Nombre" required>
                             </div>
                             <div class="col-md-12 my-2">
-                                <input type="text" class="form-control" id="apellido" placeholder="Apellido" required>
+                                <input type="text" class="form-control" id="apellidoActualizar" placeholder="Apellido" required>
                             </div>
                             <div class="col-12 my-2">
-                                <input type="email" class="form-control" id="mail" placeholder="Correo" required>
+                                <input type="email" class="form-control" id="mailActualizar" placeholder="Correo" required>
                             </div>
                             <div class="col-12">
                                 <div class="col-12 my-2">
-                                    <input type="text" class="form-control" id="tema" placeholder="Tema" required>
+                                    <input type="text" class="form-control" id="temaActualizar" placeholder="Tema" required>
                                 </div>
                                 <div class="form-group">
-                                    <textarea type="text" id="resumen" class="form-control" rows="4" aria-describedby="Ingresar texto"
+                                    <textarea type="text" id="resumenActualizar" class="form-control" rows="4" aria-describedby="Ingresar texto"
                                     placeholder="Describe un breve resumen de tu charla" required></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-borrar" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-enviar">Guardar cambios</button>
+                            <button type="button" class="btn btn-borrar" data-bs-dismiss="modal" id="btnCerrarModal">Cerrar</button>
+                            <button type="button" class="btn btn-enviar" onclick="actualizarOrador()">Guardar cambios</button>
                         </div>
                     </div>
                 </div>
