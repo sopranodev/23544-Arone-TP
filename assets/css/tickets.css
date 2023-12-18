@@ -1,6 +1,6 @@
 /* Sección Comprar tickets */
 /*Colores tomados de la foto JS Comprar Tickets del trabajo*/
-
+@import @sweetalert2.scss;
 :root {
     --ct-cards-est: #047dfe;
     --ct-cards-est-hover: #0353A8;
