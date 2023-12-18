@@ -12,6 +12,9 @@
     --btn-enviar: #96c93e;
     --ft-gradient-start: #1c3846;
     --ft-gradient-end: #1f5271;
+    --ct-btn-verde: #97c93e;
+    --ct-btn-verde-hover: #759f2d;
+    --ct-btn-borrar-hover: #922626;
 }
 
 * {
@@ -105,20 +108,36 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.honolulu {
+.bs-as {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.mx-custom {
-    margin-right: 12rem;
-    margin-left: 12rem;
-}
-
+.btn-borrar,
 .btn-enviar {
+    margin-bottom: 1rem;
     color: white;
     background-color: var(--btn-enviar);
+    width: 100%;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-borrar:hover {
+    transform: scale(0.9);
+    transition: 0.8s linear;
+    color: white;
+    background-color: var(--ct-btn-borrar-hover);
+    opacity: 0.6;
+}
+
+
+.btn-enviar:hover {
+    transform: scale(0.9);
+    transition: 0.8s linear;
+    background-color: var(--ct-btn-verde-hover);
+    opacity: 0.6;
 }
 
 .footer-container {
@@ -130,9 +149,20 @@
     padding: 1rem;
 }
 
+.mx-custom {
+    margin-right: 12rem;
+    margin-left: 12rem;
+}
+
 .mx-custom-2 {
     margin-right: 4rem !important;
     margin-left: 4rem !important
+}
+
+.mx-custom-3 {
+    margin-right: 2rem;
+    margin-left: 2rem;
+    overflow-wrap: break-word;
 }
 
 .ft-custom-gradient{
@@ -142,21 +172,21 @@
 
 /* media query */
 @media (max-width:767.98px) {
-    .mx-custom {
+    .mx-custom,.mx-custom-3 {
         margin-left: 0;
         margin-right: 0;
     }
 }
 
 @media (min-width:768px) and (max-width:991.98px) {
-    .mx-custom {
+    .mx-custom, .mx-custom-3 {
         margin-left: 4rem;
         margin-right: 4rem;
     }
 }
 
 @media (min-width:992px) and (max-width:1199.98px) {
-    .mx-custom {
+    .mx-custom, .mx-custom-3 {
         margin-left: 8rem;
         margin-right: 8rem;
     }

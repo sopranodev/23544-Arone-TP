@@ -6,12 +6,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/imgs/codoacodo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imgs/codoacodo.png" type="image/x-icon">
     <title>Codo a Codo - Trabajo Integrador Front-End - Arone</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/tickets.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/tickets.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-lg bg-body-secondary" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="./assets/imgs/codoacodo.png" alt="Codo a Codo">Conf Bs As
+                    <img src="../assets/imgs/codoacodo.png" alt="Codo a Codo">Conf Bs As
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,20 +29,23 @@
                 <div class="collapse navbar-collapse text-end" id="navbarCollapse">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./index.html#carouselExampleRide">La
+                            <a class="nav-link" aria-current="page" href="../index.html#carouselExampleRide">La
                                 Conferencia</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./index.html#secOradores">Los oradores</a>
+                            <a class="nav-link" href="../index.html#secOradores">Los oradores principales</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./index.html#secLugar">El lugar y la fecha</a>
+                            <a class="nav-link" href="../index.html#secLugar">El lugar y la fecha</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="./index.html#secConvOrador">Conviértete en orador</a>
+                            <a class="nav-link" href="../views/orador.html">Conviértete en orador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link colorGreen" href="./comprarTickets.html
+                            <a class="nav-link" href="../views/listadoOradores.html">Listado de Oradores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link colorGreen" href="../views/comprarTickets.html
                             ">Comprar tickets</a>
                         </li>
                     </ul>
@@ -53,6 +56,7 @@
     <main class="principal">
         <section id="secComprarTickets">
             <div class="comprarTickets container-fluid container-xs container-sm container-md container-lg">
+                <h1 class="mb-4"><b>Comprar Tickets</b></h1>
                 <div class="row row-cols-1 row-cols-md-3 mb-3 ticketCategoria">
                     <!-- Card Estudiante -->
                     <div class="estudiante col col-xs-12 col-sm-12 col-md-4 ">
@@ -99,7 +103,7 @@
 
             <!-- Formulario -->
             <div class="form-row px-3 my-4">
-                <form action="" class="datosForm row g-3" id="comprar_tickets">
+                <form action="" class="datosForm row g-3" id="comprar_tickets" method="post">
                     <div class="col-md-6">
                         <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
                     </div>
@@ -130,12 +134,12 @@
 
                     <div class="row">
                         <div class="col-sm-12 col-md-6 col-lg-6">
-                            <button id="btnBorrar" class="w-100 btn btn-form btn-lg btn-form btn-borrar"
+                            <button id="btnBorrar" class="w-100 btn btn-form btn-lg btn-borrar"
                                 type="reset">Borrar</button>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-lg-6">
-                            <button id="btnResumen" class="w-100 btn btn-form btn-lg btn-form btn-resumen"
+                            <button id="btnResumen" class="w-100 btn btn-form btn-lg btn-resumen"
                                 type="submit" >Resumen</button>
                         </div>
                     </div>
@@ -176,8 +180,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="./assets/JS/tickets.js"></script>
-
+    <script src="../assets/JS/tickets.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="../assets/JS/sweetAlert.js"></script> -->
 </body>
-
 </html>

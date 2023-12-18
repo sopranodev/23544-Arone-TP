@@ -1,0 +1,23 @@
+@media screen and (max-width:767.98px) {
+    .scroll {
+        margin-left: 0;
+        margin-right: 0;
+        overflow-x: auto;
+    }
+    .table {
+        width: 100%;
+    }
+    /* Ocultar mail */
+    .table tr th:nth-child(4),
+    .table tr td:nth-child(4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width:575.98px) {
+      /* Ocultar resumen */
+    .table tr th:nth-child(6),
+    .table tr td:nth-child(6) {
+        display: none;
+    }
+}

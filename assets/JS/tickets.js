@@ -52,20 +52,30 @@ function removeClassError() {
 function formularioCompleto() {
     removeClassError();
     if(nombre.value === ""){
-        alert("Por favor, escriba su nombre");
+        Swal.fire({
+            text: "Por favor, escriba su nombre"
+        }).then(function() {
+            document.getElementById("nombre").focus();});
         nombre.classList.add("is-invalid");
         nombre.focus();
         return false;
     }
+
     if(apellido.value === ""){
-        alert("Por favor, escriba su apellido");
+        Swal.fire({
+            text: "Por favor, escriba su apellido"
+        }).then(function() {
+            document.getElementById("apellido").focus();});
         apellido.classList.add("is-invalid");
         apellido.focus();
         return false;
     }
 
     if(correo.value === ""){
-        alert("Por favor, escriba su correo");
+        Swal.fire({
+            text: "Por favor, escriba su correo"
+        }).then(function() {
+            document.getElementById("correo").focus();});
         correo.classList.add("is-invalid");
         correo.focus();
         return false;
@@ -76,25 +86,35 @@ function formularioCompleto() {
     }
 
     if(!correoValido(correo.value)){
-        alert("Por favor, escriba un correo válido!");
+        Swal.fire({
+            text: "Por favor, una dirección de correo válida"
+        }).then(function() {
+            document.getElementById("correo").focus();});
         correo.classList.add("is-invalid");
         correo.focus();
         return false;
     }
 
     if((cantidad.value == 0) || (isNaN(cantidad.value))){
-        alert("Por favor, ingrese una cantidad válida!");
+        Swal.fire({
+            text: "Por favor, ingrese una cantidad válida"
+        }).then(function() {
+            document.getElementById("cantidad").focus();});
         cantidad.classList.add("is-invalid");
         cantidad.focus();
         return false;
     }
 
     if(categoria.value == ""){
-        alert("Por favor, seleccione una categoría");
+        Swal.fire({
+            text: "Por favor, seleccione una categoría"
+        }).then(function() {
+            document.getElementById("categoria").focus();});
         categoria.classList.add("is-invalid");
         categoria.focus();
         return false;
     }
+    
     return true;
 }
 
@@ -167,14 +187,16 @@ btnResumen.addEventListener('click', function () {
     if(formularioCompleto()) {
         actualizarTotal();
         const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('apellido').value;
         const cantidad = cantidadInput.value;
         const categoria = categoriaSelect.options[categoriaSelect.selectedIndex].text;
-        const mensaje = `Hola ${nombre}!\nUsted va a comprar ${cantidad} ticket(s) de ${categoria} \n\n Total a pagar: $${totalPago.textContent}`;
-        alert(`${mensaje}`);
+        const mensaje = `Hola ${nombre} ${apellido}!\nUsted va a comprar ${cantidad} ticket(s) de ${categoria} \n\n Total a pagar: <b>$${totalPago.textContent}</b>`;
+        Swal.fire(`${mensaje}`);
+        limpiarDatos();
+    
     }
 });
-
-document.getElementById('btnBorrar').addEventListener('click', function () {
+limpiarDatos = () => {
     document.getElementById('comprar_tickets').reset();
     removeClassError();
     totalPago.textContent = "";
@@ -182,9 +204,10 @@ document.getElementById('btnBorrar').addEventListener('click', function () {
     totalCantidad.textContent = "";
     cardEstudiante.classList.remove('card-active');
     cardTrainee.classList.remove('card-active');
-    cardJunior.classList.remove('card-active');
+    cardJunior.classList.remove('card-active'); 
+}
 
-});
+document.getElementById('btnBorrar').addEventListener('click',limpiarDatos);
 
 window.addEventListener("beforeunload", function (e) {
     // Restablece los valores de los campos del formulario o simplemente restablece el formulario
@@ -194,5 +217,5 @@ window.addEventListener("beforeunload", function (e) {
     cardTrainee.classList.remove('card-active');
     cardJunior.classList.remove('card-active');
     
-    e.returnValue = '¿Estás seguro de que deseas abandonar la página?'; 
+    //e.returnValue = '¿Estás seguro de que deseas abandonar la página?'; 
 });
