@@ -35,4 +35,4 @@ El objetivo es mostrar en un formato tipo tabla todos los registros creados en u
 La entrega deberá realizarse en formato video donde se muestre en como máximo de 3 minutos la funcionalidad de la aplicación.
 ---
 Links a videos de funcionamiento de la página web:
-[Lista de reproducción de los videos de la página funcionando](https://www.youtube.com/playlist?list=PLffi-7VxVc_wHoPsqCpNFFcRuF0tQfeem){width=50% height=50%}
+[Lista de reproducción de los videos de la página funcionando](https://www.youtube.com/playlist?list=PLffi-7VxVc_wHoPsqCpNFFcRuF0tQfeem)
