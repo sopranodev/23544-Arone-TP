@@ -33,3 +33,7 @@ La quinta parte se conforma por la integración de todas las partes anteriores y
 <br>
 El objetivo es mostrar en un formato tipo tabla todos los registros creados en una tabla de tu BD diseñada previamente.
 La entrega deberá realizarse en formato video donde se muestre en como máximo de 3 minutos la funcionalidad de la aplicación.
+<br>
+---
+Links a videos de funcionamiento de la página web:
+[Lista de reproducción de los videos de la página funcionando](https://www.youtube.com/playlist?list=PLffi-7VxVc_wHoPsqCpNFFcRuF0tQfeem)
